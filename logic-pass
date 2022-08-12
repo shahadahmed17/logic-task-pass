@@ -1,0 +1,39 @@
+#Q1:- Write a method that will remove any given character from a String?
+
+# using replace method, the original word is "computer engineering"
+word = "Computer Engineering"
+print ("Original string: " + word )  
+
+#  removal of the character "r"
+print ("The string after removal of character: " + word.replace('r', '')) 
+   
+
+
+#Q2:- Write a program to find all prime numbers up to a given range of numbers?
+
+
+# range creation to find the prime number within this range,  with adding 1 to max to include it in the range 
+min = int(input("Enter the min : "))
+max = int(input("Enter the max : "))
+for n in range(min,max+1):
+    
+# a prime number is only divisible by itself and 1, modern maths doesnot include 1 in this rule 
+   if n > 1:
+       for i in range(2,n):
+           if (n % i) == 0:
+               break
+       else:
+           print(n)
+           
+           
+#Q3:- write a function that count how many the given character repeated in a given string?
+
+import collections
+string1 = ' There is a greater danger from AI if we allow it to become self designing for it can improve itself rapidly and we may lose control'
+d = collections.defaultdict(int)
+for c in string1:
+    d[c] += 1
+
+for c in sorted(d, key=d.get, reverse=True):
+  if d[c] > 1:
+      print('%s %d' % (c, d[c]))
